@@ -94,12 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	window.addToConsoleOutput = (message) => {
-		const outputLine = document.createElement("div");
+		setTimeout(() => {
+			const outputLine = document.createElement("div");
 		outputLine.innerHTML = `$ ${message}`;
 		consoleOutput.appendChild(outputLine);
 
 		// Scroll to the bottom of the console output
 		consoleOutput.scrollTop = consoleOutput.scrollHeight;
+		}, 50);
 	};
 
 	window.clearConsoleOutput = () => {
