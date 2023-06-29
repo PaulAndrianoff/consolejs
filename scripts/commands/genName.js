@@ -36,12 +36,15 @@ const genNameCommand = (commandArgs) => {
 		for (let j = 0; j < nameLength; j++) {
 			if (isVowel) {
 				name += vowels[Math.floor(Math.random() * vowels.length)];
-				isVowel = Math.random() < 0.5;
+				isVowel = Math.random() < 0.7;
 			} else {
 				name += consonants[Math.floor(Math.random() * consonants.length)];
-				isVowel = true;
+				isVowel = Math.random() < 0.3;
 			}
 		}
+
+        // Capitalize the first letter
+        name = name.charAt(0).toUpperCase() + name.slice(1);
 
 		window.addToConsoleOutput(`Generated name ${i + 1}: <span class="success-message">${name}</span>`);
 	}
